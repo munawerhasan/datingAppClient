@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
 import { User } from './_models/user';
+import { AccountService } from './_services/account.service';
 
 @Component({
   selector: 'app-root',
@@ -11,29 +12,20 @@ import { User } from './_models/user';
 export class AppComponent implements OnInit {
   users: any;
 
-  constructor(private http: HttpClient) {
+  constructor(private accountService:AccountService) {
     
   }
 
   title = 'datingAppClient';
 
   ngOnInit() {
-    this.getUsers();
-    this.setCurrentUser();
+    this.setCurrentUser
   }
 
   setCurrentUser(){
     const user:User = JSON.parse(localStorage.getItem('user') || '{}');
-    console.log("user", user);
-    
+   this.accountService.setCurrentUser(user);
   }
 
-  getUsers() {
-    this.http.get('https://localhost:44356/api/UsersConroller').subscribe((res:any)=>{
-      this.users = res;
-      console.log(this.users);
-    }, error=>{console.log(error);
-    });
-    
-  }
+  
 }
