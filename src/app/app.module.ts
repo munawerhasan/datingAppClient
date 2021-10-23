@@ -14,7 +14,6 @@ import { MemberListComponent } from './members/member-list/member-list.component
 import { MessagesComponent } from './messages/messages.component';
 import { ListsComponent } from './lists/lists.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ToastrModule } from 'ngx-toastr';
 import { SharedModule } from './_modules/shared.module';
 
 
