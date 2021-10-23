@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit {
   //     this.users = res;
   //   })
   // }
+  
   cancelRegisterMode(event: boolean) {
     this.registerMode = event;
   }
